@@ -85,5 +85,6 @@ body {
 .prev-btn, .next-btn {
     z-index: 999;
     font-size: 2rem;
-    color: #252525;
+    color: #dac913;
+    background-color: rgba(0,0,0,0.15);
 }
