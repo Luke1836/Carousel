@@ -79,6 +79,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.slider:hover .navigation {
+    opacity: 1;
 }
 
 .prev-btn, .next-btn {
