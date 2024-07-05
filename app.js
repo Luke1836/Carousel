@@ -1,4 +1,4 @@
-const menu = [
+const cards = [
     {
       id: 1,
       title: "Aurora Borealis",
@@ -40,6 +40,37 @@ const menu = [
       title: "Waterfall",
       img: "./Source/waterfall-1.avif",
       desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem soluta debitis vitae officiis provident consequuntur dolore ut et odio accusantium necessitatibus, iusto quaerat earum inventore voluptate ducimus deserunt, maxime fugit.`,
-    },
-    
+    }
   ];
+
+  const container = document.querySelector('.slider');
+  const icons = document.querySelector('navigation-visibility');
+  displayCard(cards);
+  displaySlideIcon(cards);
+
+  function displaySlideIcon(cards) {
+    const iconsArray = cards.map((item) => {
+        
+    })
+        
+  }
+
+  function displayCard(cards) {
+    let card = cards.map((item)=>{
+        return `<div class="slide">
+                    <img src=${item.img} alt=${item.title} class="card-img">
+                    <div class="info">
+                        <h2>${item.title}</h2>
+                        <p>${item.desc}p>
+                    </div>
+                </div>`
+    });
+    card = card.join('');  //Joins all the strings together to form one large string
+    container.innerHTML = card;
+    container.innerHTML += `<div class="navigation">
+                                <i class="fas fa-chevron-left prev-btn"></i>
+                                <i class="fas fa-chevron-right next-btn"></i>
+                            </div>`;
+
+    
+  }
