@@ -44,15 +44,11 @@ const cards = [
   ];
 
   const container = document.querySelector('.slider');
-  const icons = document.querySelector('navigation-visibility');
   displayCard(cards);
-  displaySlideIcon(cards);
 
   function displaySlideIcon(cards) {
-    const iconsArray = cards.map((item) => {
-        
-    })
-        
+    const iconHTML = cards.map(() => `<div class="slide-icon"></div>`).join('');
+    return iconHTML;
   }
 
   function displayCard(cards) {
@@ -63,14 +59,19 @@ const cards = [
                         <h2>${item.title}</h2>
                         <p>${item.desc}p>
                     </div>
+                </div>
+                
+                 <div class="navigation-visibility">
+
                 </div>`
     });
     card = card.join('');  //Joins all the strings together to form one large string
     container.innerHTML = card;
+    const iconsContainer = document.querySelector('.navigation-visibility'); 
+    iconsContainer.innerHTML = displaySlideIcon(cards);;
     container.innerHTML += `<div class="navigation">
                                 <i class="fas fa-chevron-left prev-btn"></i>
                                 <i class="fas fa-chevron-right next-btn"></i>
-                            </div>`;
-
-    
+                            </div>
+                            `;
   }
