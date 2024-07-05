@@ -79,7 +79,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem;
 }
 
 .prev-btn, .next-btn {
@@ -88,4 +87,5 @@ body {
     color: #161616;
     padding: 0.45rem;
     background-color: rgba(255,255,255,0.75);
+    cursor: pointer;
 }
