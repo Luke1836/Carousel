@@ -27,6 +27,23 @@ body {
                 End of General Styles 
                                         ---------- */
 
+/* ---------- 
+                Slide Transitions 
+                                    ---------- */
+
+.slider .inactive {
+    clip-path: circle(0% at 0 50%);
+}
+                                    
+.slider .active {
+    clip-path: circle(150% at 0 50%);
+    transition: clip-path 0.8s ease-in;
+}
+
+/* ---------- 
+               End of Slide Transitions 
+                                         ---------- */
+
 
 .slider {
     position: relative;
@@ -43,15 +60,6 @@ body {
     width: 100%;
     height: 100%;
     background-color: #FFF;
-}
-
-.slider .inactive {
-    clip-path: circle(0% at 0 50%);
-}
-
-.slider .active {
-    clip-path: circle(150% at 0 50%);
-    transition: clip-path 0.8s ease-in;
 }
 
 .card-img {

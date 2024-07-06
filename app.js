@@ -75,6 +75,7 @@ function displayCard(cards) {
 
   // Add event listeners after elements are rendered
   addEventListeners();
+  repeater();
 }
 
 function addEventListeners() {
@@ -130,4 +131,35 @@ function addEventListeners() {
     slideIcons[currentSlide].classList.add('active');
     slides[currentSlide].classList.remove('inactive');
   });
+}
+
+
+/* ---------- Image slider Autoplay ----------- */
+
+function repeater() {
+  let playSlider;
+  const slides = document.querySelectorAll('.slide');
+  const slideIcons = document.querySelectorAll('.slide-icon');
+  let currentSlide = 0;
+  const numSlides = slides.length;
+  
+  playSlider = setInterval(() => {
+    slides.forEach((slide) => {
+      slide.classList.remove('active');
+      slide.classList.add('inactive');
+    });
+
+    slideIcons.forEach((slideIcon) => {
+      slideIcon.classList.remove('active');
+    });
+
+    currentSlide++;
+
+    if(currentSlide > (numSlides - 1))
+      currentSlide = 0;
+
+    slides[currentSlide].classList.add('active');
+    slideIcons[currentSlide].classList.add('active');
+    slides[currentSlide].classList.remove('inactive');
+  }, 3000);
 }
