@@ -51,7 +51,7 @@ body {
 
 .slider .active {
     clip-path: circle(150% at 0 50%);
-    transition: clip-path 1s ease-in;
+    transition: clip-path 0.8s ease-in;
 }
 
 .card-img {
@@ -119,7 +119,7 @@ body {
 }
 
 .navigation-visibility .active {
-    transition: background-color 1s;
+    transition: background-color 0.8s;
     background-color: rgb(200, 53, 40);
 }
 

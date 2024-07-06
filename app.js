@@ -110,9 +110,11 @@ function addEventListeners() {
     slides[currentSlide].classList.remove('inactive');
   });
 
+
   prevBtn.addEventListener('click', () => {
     slides.forEach((slide) => {
       slide.classList.remove('active');
+      slide.classList.add('inactive');
     });
 
     slideIcons.forEach((slideIcon) => {
@@ -126,5 +128,6 @@ function addEventListeners() {
 
     slides[currentSlide].classList.add('active');
     slideIcons[currentSlide].classList.add('active');
+    slides[currentSlide].classList.remove('inactive');
   });
 }
