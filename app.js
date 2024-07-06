@@ -53,18 +53,18 @@ const cards = [
 
   function displayCard(cards) {
     let card = cards.map((item)=>{
-        return `<div class="slide">
+        return `<div class="slide inactive">
                     <img src=${item.img} alt=${item.title} class="card-img">
                     <div class="info">
                         <h2>${item.title}</h2>
                         <p>${item.desc}p>
                     </div>
                 </div>
-                
-                 <div class="navigation-visibility">
-
-                </div>`
+                `
     });
+    card.push(`<div class="navigation-visibility">
+
+              </div>`);
     card = card.join('');  //Joins all the strings together to form one large string
     container.innerHTML = card;
     const iconsContainer = document.querySelector('.navigation-visibility'); 
@@ -86,16 +86,21 @@ let currentSlide = 0;
 const numSlides = slides.length;
 
 //Initialising the state
-slides[0].classList.add('active');
-slideIcons[0].classList.add('active');
+slides[numSlides - 1].classList.add('active');
+slideIcons[numSlides - 1].classList.add('active');
+slides[numSlides - 1].classList.remove('inactive');
+slideIcons[numSlides - 1].classList.remove('inactive');
+
 
 nextBtn.addEventListener('click', () => {
   slides.forEach((slide) => {
     slide.classList.remove('active');
+    slide.classList.add('inactive');
   });
 
   slideIcons.forEach((slideIcon) => {
     slideIcon.classList.remove('active');
+    slideIcon.classList.add('inactive');
   });
 
   currentSlide++;
@@ -105,6 +110,8 @@ nextBtn.addEventListener('click', () => {
 
   slides[currentSlide].classList.add('active');
   slideIcons[currentSlide].classList.add('active');
+  slides[currentSlide].classList.remove('inactive');
+  slideIcons[currentSlide].classList.remove('inactive');
 });
 
 

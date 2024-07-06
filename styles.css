@@ -45,8 +45,13 @@ body {
     background-color: #FFF;
 }
 
+.slider .slide .inactive {
+    clip-path: circle(0% at 0 50%);
+}
+
 .slider .slide .active {
-    
+    clip-path: circle(150% at 0 50%);
+    transition: clip-path 1s ease-in;
 }
 
 .card-img {
