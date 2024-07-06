@@ -43,6 +43,7 @@ const cards = [
   }
 ];
 
+let playSlider;
 const container = document.querySelector('.slider');
 displayCard(cards);
 
@@ -131,13 +132,20 @@ function addEventListeners() {
     slideIcons[currentSlide].classList.add('active');
     slides[currentSlide].classList.remove('inactive');
   });
+
+  container.addEventListener('mouseover', () => {
+    clearInterval(playSlider);
+  });
+
+  container.addEventListener('mouseout', () => {
+    repeater();
+  });
 }
 
 
 /* ---------- Image slider Autoplay ----------- */
 
 function repeater() {
-  let playSlider;
   const slides = document.querySelectorAll('.slide');
   const slideIcons = document.querySelectorAll('.slide-icon');
   let currentSlide = 0;
