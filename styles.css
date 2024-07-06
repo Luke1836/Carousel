@@ -45,6 +45,10 @@ body {
     background-color: #FFF;
 }
 
+.slider .slide .active {
+    
+}
+
 .card-img {
     position: absolute;
     width: 100%;

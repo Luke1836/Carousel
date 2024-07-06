@@ -82,6 +82,12 @@ const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 const slides = document.querySelectorAll('.slide');
 const slideIcons = document.querySelectorAll('.slide-icon');
+let currentSlide = 0;
+const numSlides = slides.length;
+
+//Initialising the state
+slides[0].classList.add('active');
+slideIcons[0].classList.add('active');
 
 nextBtn.addEventListener('click', () => {
   slides.forEach((slide) => {
@@ -92,4 +98,30 @@ nextBtn.addEventListener('click', () => {
     slideIcon.classList.remove('active');
   });
 
-})
+  currentSlide++;
+
+  if(currentSlide > (numSlides - 1))
+    currentSlide = 0;
+
+  slides[currentSlide].classList.add('active');
+  slideIcons[currentSlide].classList.add('active');
+});
+
+
+prevBtn.addEventListener('click', () => {
+  slides.forEach((slide) => {
+    slide.classList.remove('active');
+  });
+
+  slideIcons.forEach((slideIcon) => {
+    slideIcon.classList.remove('active');
+  });
+
+  currentSlide++;
+
+  if(currentSlide < 0)
+    currentSlide = numSlides - 1;
+
+  slides[currentSlide].classList.add('active');
+  slideIcons[currentSlide].classList.add('active');
+});
