@@ -75,3 +75,21 @@ const cards = [
                             </div>
                             `;
   }
+
+
+/* ---------- Slider Animations ---------- */
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+const slides = document.querySelectorAll('.slide');
+const slideIcons = document.querySelectorAll('.slide-icon');
+
+nextBtn.addEventListener('click', () => {
+  slides.forEach((slide) => {
+    slide.classList.remove('active');
+  });
+
+  slideIcons.forEach((slideIcon) => {
+    slideIcon.classList.remove('active');
+  });
+
+})
