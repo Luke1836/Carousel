@@ -89,7 +89,6 @@ function addEventListeners() {
   slides[currentSlide].classList.add('active');
   slideIcons[currentSlide].classList.add('active');
   slides[currentSlide].classList.remove('inactive');
-  slideIcons[currentSlide].classList.remove('inactive');
 
   nextBtn.addEventListener('click', () => {
     slides.forEach((slide) => {
@@ -99,7 +98,6 @@ function addEventListeners() {
 
     slideIcons.forEach((slideIcon) => {
       slideIcon.classList.remove('active');
-      slideIcon.classList.add('inactive');
     });
 
     currentSlide++;
@@ -110,7 +108,6 @@ function addEventListeners() {
     slides[currentSlide].classList.add('active');
     slideIcons[currentSlide].classList.add('active');
     slides[currentSlide].classList.remove('inactive');
-    slideIcons[currentSlide].classList.remove('inactive');
   });
 
   prevBtn.addEventListener('click', () => {

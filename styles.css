@@ -45,11 +45,11 @@ body {
     background-color: #FFF;
 }
 
-.slider .slide .inactive {
+.slider .inactive {
     clip-path: circle(0% at 0 50%);
 }
 
-.slider .slide .active {
+.slider .active {
     clip-path: circle(150% at 0 50%);
     transition: clip-path 1s ease-in;
 }
@@ -118,13 +118,9 @@ body {
     box-shadow: 0px 5px 25px rgb(1 1 1 / 20%);
 }
 
-.navigation-visibility .slide-icon .active{
-    transition: all 1s;
-    background-color: aqua;
-}
-
-.navigation-visibility .slide-icon .inactive{
-    background-color: rgba(255,255,255,0.5);
+.navigation-visibility .active {
+    transition: background-color 1s;
+    background-color: rgb(200, 53, 40);
 }
 
 .prev-btn, .next-btn {
